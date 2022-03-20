@@ -10,13 +10,13 @@ class Blocks extends React.Component {
       };
     }
   
+  getBlockNumber = async () => {
+    let blockNumber = await web3.eth.getBlockNumber();
+    return blockNumber;
+  };
   
     render() {
-      return (
-        <div>
-          Block
-        </div>
-      );
+    return <div>Block</div>;
     }
 }
   
