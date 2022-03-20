@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-const BlockTransactionDetails = ({ blockNumber, web3 }) => {
+const BlockTransactionInfo = ({ blockNumber, web3 }) => {
   const classes = useStyles();
   const [currentBlockTransactionsDetail, setCurrentBlockTransactionsDetails] =
     useState([]);
@@ -106,4 +106,4 @@ const BlockTransactionDetails = ({ blockNumber, web3 }) => {
   );
 };
 
-export default BlockTransactionDetails;
+export default BlockTransactionInfo;

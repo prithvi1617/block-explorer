@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Blocks from "./components/block-explorer/block";
 function App() {
   return (
-    <div className="App">
-      App is running
-    </div>
+    <>
+      <Blocks></Blocks>
+    </>
   );
 }
 
