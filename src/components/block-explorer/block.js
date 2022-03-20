@@ -84,6 +84,14 @@ class Blocks extends React.Component {
       }
     }, 3000);
   }
+
+  handleClick = async (event) => {
+    this.setState({
+      displayTransaction: true,
+      blockNo: event.target.getAttribute("value"),
+    });
+  };
+
     render() {
     return <div>Block</div>;
     }
