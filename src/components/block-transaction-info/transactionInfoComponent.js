@@ -77,12 +77,11 @@ const BlockTransactionInfo = ({ blockNumber, web3 }) => {
             <Table sx={{ minWidth: 550 }} aria-label="simple table">
               <TableHead>
                 <TableRow className={classes.root}>
-                  <TableCell>Block Transaction Index</TableCell>
                   <TableCell align="center">Block Hash</TableCell>
                   <TableCell align="center">Gas</TableCell>
                   <TableCell align="center">From</TableCell>
                   <TableCell align="center">To</TableCell>
-                  <TableCell align="center">Value</TableCell>
+                  <TableCell align="center">Value(in Wei)</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -91,9 +90,6 @@ const BlockTransactionInfo = ({ blockNumber, web3 }) => {
                     key={index}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
-                      {block.transactionIndex}
-                    </TableCell>
                     <TableCell align="center">{block.hash}</TableCell>
                     <TableCell align="center">{block.gas}</TableCell>
                     <TableCell align="center">{block.from}</TableCell>
