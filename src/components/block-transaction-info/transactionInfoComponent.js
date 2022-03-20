@@ -66,12 +66,13 @@ const BlockTransactionInfo = ({ blockNumber, web3 }) => {
     <>
       <Paper elevation={7}>
         <Box p={5} textAlign="center">
-          <h3 text-align="center"> Block {blockNumber} Transactions Details</h3>
+          <h1 text-align="center"> Block {blockNumber} Transactions Details</h1>
           <SearchBar
             value={searched}
             onChange={(searchVal) => requestSearch(searchVal)}
             onCancelSearch={() => cancelSearch()}
           />
+          <h1></h1>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 550 }} aria-label="simple table">
               <TableHead>

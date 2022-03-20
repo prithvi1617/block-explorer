@@ -71,7 +71,6 @@ class Blocks extends React.Component {
       block.push(currBlockNo);
     }
 
-    console.log("--------x1---------", block);
     this.setState({
       loading: false,
       blocks: block,
@@ -89,10 +88,8 @@ class Blocks extends React.Component {
   }
 
   async componentDidMount() {
-    console.log("--------------h1--------------");
     setInterval(async () => {
       let curr_block_no = await this.getBlockNumber();
-      console.log("--------------h2--------------", curr_block_no);
 
       if (curr_block_no > this.state?.blocks[0]?.number) {
         const block = await getBlockDetailsByNumber(curr_block_no, true);
