@@ -43,6 +43,15 @@ class Blocks extends React.Component {
     });
   };
 
+  async componentWillMount() {
+    let curr_block_no = await this.web3_eth_getBlockNumber();
+
+    this.setState({
+      curr_block: curr_block_no,
+    });
+
+    await this.getBlocks(curr_block_no);
+  }
     render() {
     return <div>Block</div>;
     }
