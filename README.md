@@ -34,5 +34,9 @@ npm i;
 3.  Start project
 
 ```javascript
+npm run build
+```
+
+```javascript
 npm start
 ```
