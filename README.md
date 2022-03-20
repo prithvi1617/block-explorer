@@ -22,7 +22,7 @@ NodeJS Version = v14.18.1
 1.  Git clone
 
 ```javascript
-git clone https://github.com/Glebasya2000/react-web3-blockexplorer.git
+git clone https://github.com/prithvi1617/block-explorer.git
 ```
 
 2.  Install npm package
