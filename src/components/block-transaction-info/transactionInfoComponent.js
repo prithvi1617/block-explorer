@@ -45,9 +45,12 @@ const BlockTransactionInfo = ({ blockNumber, web3 }) => {
 
     const filterTransactions = currentBlockTransactionsDetail.filter(
       (transaction) => {
-        return transaction.from
-          .toLowerCase()
-          .includes(searchedVal.toLowerCase());
+        if (transaction) {
+        }
+        return (
+          transaction.from.toLowerCase().includes(searchedVal.toLowerCase()) ||
+          transaction.to.toLowerCase().includes(searchedVal.toLowerCase())
+        );
       }
     );
 
