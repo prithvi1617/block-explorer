@@ -1,4 +1,14 @@
 import React from "react";
+const getBlockDetailsByNumber = (i, opt = true) => {
+  return new Promise((resolve, reject) => {
+    web3.eth.getBlock(i, opt, (err, data) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(data);
+    });
+  });
+};
 
 class Blocks extends React.Component {
     constructor(props) {
