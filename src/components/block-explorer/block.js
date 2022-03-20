@@ -1,5 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
+
 import web3 from "../../shared/web3/web3";
 import {
   Paper,
@@ -44,10 +45,13 @@ class Blocks extends React.Component {
     super(props);
     this.state = {
       blocks: [],
-      curr_block: null,
-      displayTransaction: false,
-      loading: true,
       blockNo: null,
+      curr_block: null,
+      hashrate: null,
+      gasPrice: null,
+      peerCount: null,
+      loading: true,
+      displayTransaction: false,
     };
   }
 
@@ -67,6 +71,7 @@ class Blocks extends React.Component {
       block.push(currBlockNo);
     }
 
+    console.log("--------x1---------", block);
     this.setState({
       loading: false,
       blocks: block,
@@ -74,18 +79,20 @@ class Blocks extends React.Component {
   };
 
   async componentWillMount() {
-    let curr_block_no = await this.web3_eth_getBlockNumber();
+    let curr_block_no = await this.getBlockNumber();
 
     this.setState({
       curr_block: curr_block_no,
     });
 
-    await this.getBlocks(curr_block_no);
+    await this.getTopTenBlocks(curr_block_no);
   }
 
   async componentDidMount() {
+    console.log("--------------h1--------------");
     setInterval(async () => {
-      let curr_block_no = await this.web3_eth_getBlockNumber();
+      let curr_block_no = await this.getBlockNumber();
+      console.log("--------------h2--------------", curr_block_no);
 
       if (curr_block_no > this.state?.blocks[0]?.number) {
         const block = await getBlockDetailsByNumber(curr_block_no, true);
